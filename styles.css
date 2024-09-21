@@ -1,0 +1,552 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    overflow: hidden;
+}
+
+#fullpage {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+
+.section {
+    height: 100vh;
+    scroll-snap-align: start;
+    position: relative;
+}
+
+#section1 {
+    background-image: url('https://images.adsttc.com/media/images/6037/0ec7/f91c/8122/3000/03d3/large_jpg/_FI_2_EXTERIOR_2.jpg?1614220985');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#section1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+/* Different background colors for each section */
+#section1 { background-color: #0d0c0c; }
+#section2 { background-color: #0d0c0c; }
+#section3 { background-color: #0d0c0c; }
+#section4 { background-color: #0d0c0c; }
+#section5 { background-color: #0d0c0c; }
+#section6 { background-color: #0d0c0c; }
+
+h1 {
+    font-size: 3rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Add some animation for section transitions */
+.section {
+    transition: opacity 0.2s ease-in-out;
+}
+
+.section:not(.active) {
+    opacity: 0.7;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: relative;
+    z-index: 1;
+}
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.consultation-banner {
+    background-color: rgba(255, 255, 255, 0.1);
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 1;
+}
+
+.gallery-container {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.gallery-item {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+}
+
+.gallery-item:hover .overlay {
+    height: 100%;
+}
+
+.text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* Add this to your existing CSS */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto:wght@300&display=swap');
+
+#section3 {
+    background-color: #111; /* Very dark background for contrast */
+    color: #fff; /* Light text for readability */
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#section3 .content {
+    max-width: 800px; /* Limit the width for better readability */
+    margin: 0 auto;
+}
+
+#section3 h1 {
+    margin-bottom: 30px;
+    font-family: 'Lato', sans-serif; /* Slim, light font */
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+#section3 p {
+    font-family: 'Roboto', sans-serif; /* Slim, light font for body text */
+    font-size: 1rem;
+    line-height: 1.8; /* Spacious line height for readability */
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+#section3 button {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 10px 30px;
+    background-color: #fff;
+    color: #111;
+    border: 1px solid #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#section3 button:hover {
+    background-color: #444;
+    color: #fff;
+}
+
+#section5 {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+    position: relative;
+}
+
+/* Left half with a fixed background image and overlay */
+#section5 .left-content {
+    width: 50%;
+    background-image: url('https://archi-monarch.com/wp-content/uploads/2023/02/FUTURE-OF-RESIDENTIAL-BUILDING-DESIGN-IN-ARCHITECTURE.webp'); /* First background image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Static background */
+    position: relative; /* Necessary for the overlay */
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+
+/* Overlay for left half */
+#section5 .left-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Black overlay with 40% opacity */
+    z-index: 0; /* Make sure it stays behind the text */
+}
+
+#section5 .left-content * {
+    position: relative; /* Keep text on top of the overlay */
+    z-index: 1;
+}
+
+/* Right half with a fixed background image and overlay */
+#section5 .right-content {
+    width: 50%;
+    background-image: url('https://media.architecturaldigest.com/photos/5d3f6c8084a5790008e99f37/master/w_1600%2Cc_limit/GettyImages-1143278588.jpg'); /* Second background image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Static background */
+    position: relative; /* Necessary for the overlay */
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+
+/* Overlay for right half */
+#section5 .right-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Black overlay with 40% opacity */
+    z-index: 0; /* Make sure it stays behind the text */
+}
+
+#section5 .right-content * {
+    position: relative; /* Keep text on top of the overlay */
+    z-index: 1;
+}
+
+/* Styling for the text and buttons */
+#section5 h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family: 'Lato', sans-serif; /* Slim, light font */
+    font-weight: 300; /* Light weight */
+    z-index: 1;
+}
+
+#section5 p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif; /* Slim font for body text */
+    font-weight: 300;
+}
+
+#section5 button {
+    font-size: 1rem;
+    padding: 10px 30px;
+    background-color: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Roboto', sans-serif; /* Slim font for button text */
+    font-weight: 300;
+}
+
+#section5 button:hover {
+    background-color: #444;
+    color: white;
+}
+
+#section6 {
+    background-color: #222; /* Dark background */
+    color: white;
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+#section6 .footer-left, 
+#section6 .footer-right, 
+#section6 .footer-center {
+    flex: 1;
+    padding: 20px;
+    min-width: 250px; /* Ensure responsive design */
+}
+
+/* Contact Form Styling */
+#section6 form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#section6 form input,
+#section6 form textarea {
+    background: transparent;
+    border: 1px solid white;
+    padding: 10px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#section6 form input:focus,
+#section6 form textarea:focus {
+    border-color: #00BFFF; /* Light blue highlight on focus */
+}
+
+#section6 form button {
+    padding: 10px 30px;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#section6 form button:hover {
+    background-color: white;
+    color: #222;
+    border-color: #222;
+}
+
+/* Company Address Styling */
+#section6 .footer-center p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#section6 .footer-center p:hover {
+    color: #00BFFF; /* Hover color for address */
+}
+
+/* Social Links Styling */
+#section6 .social-links {
+    display: flex;
+    gap: 15px;
+}
+
+#section6 .social-links a {
+    display: inline-block;
+    color: white;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#section6 .social-links a:hover {
+    color: #00BFFF; /* Hover effect for social links */
+    transform: scale(1.2); /* Scale up on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #section6 {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #section6 .footer-left,
+    #section6 .footer-right,
+    #section6 .footer-center {
+        margin-bottom: 30px;
+    }
+}
+
+
+/* Updated Floating Image and Stars Container */
+.floating-image-container {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    width: 400px;  /* 4 times bigger */
+    height: 400px; /* 4 times bigger */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: floatImage 3s ease-in-out infinite;
+}
+
+/* Updated Founder Image Styling */
+.founder-image {
+    width: 300px;  /* 4 times bigger */
+    height: 300px; /* 4 times bigger */
+    border-radius: 50%;
+    border: 2px solid white;
+    animation: floatImage 3s ease-in-out infinite;
+}
+
+/* Updated Stars Styling */
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Updated Star Styling */
+.star {
+    position: absolute;
+    width: 20px;   /* Bigger stars */
+    height: 20px;  /* Bigger stars */
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: starMove 4s ease-in-out infinite;
+}
+
+.star:nth-child(1) {
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.star:nth-child(2) {
+    top: 50%;
+    left: 80%;
+    animation-delay: 0.5s;
+}
+
+.star:nth-child(3) {
+    top: 80%;
+    left: 30%;
+    animation-delay: 1s;
+}
+
+.star:nth-child(4) {
+    top: 20%;
+    left: 60%;
+    animation-delay: 1.5s;
+}
+
+/* Floating Animation for Image */
+@keyframes floatImage {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-40px); /* Adjusted for larger size */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Star Floating Animation */
+@keyframes starMove {
+    0% {
+        transform: scale(0.7) translateY(0);  /* Adjusted for larger stars */
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1) translateY(-40px); /* Adjusted for larger size */
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(0.7) translateY(0); /* Adjusted for larger stars */
+        opacity: 1;
+    }
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .floating-image-container {
+        width: 300px;  /* Adjust for smaller screens */
+        height: 300px;
+        right: 20px;
+        bottom: 20px;
+    }
+    
+    .founder-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .star {
+        width: 10px; /* Smaller stars on mobile */
+        height: 10px;
+    }
+}
